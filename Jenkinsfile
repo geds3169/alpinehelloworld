@@ -35,7 +35,7 @@ pipeline {
               script {
                 sh '''
                   echo "Testing Image..."
-                  curl http://192.168.30.29 | grep -q "Hello world!"
+                  curl http://docker-jenkins.web-connectivity.fr | grep -q "Hello world!"
                 '''
               }
            }
