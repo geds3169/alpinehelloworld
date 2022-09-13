@@ -107,7 +107,6 @@ pipeline {
       steps {
           script {
             sh '''
-              echo "${HEROKU_GEDS}"
               export http_proxy="${HTTP_PROXY}"
               export https_proxy="${HTTP_PROXY}"
               heroku container:login
