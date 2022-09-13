@@ -78,7 +78,7 @@ pipeline {
             }
       agent any
       environment {
-           HEROKU_API_KEY = credentials("${HEROKU_GEDS}")
+           HEROKU_API_KEY = credentials('HEROKU_GEDS')
       }  
       steps {
           script {
@@ -102,7 +102,7 @@ pipeline {
             }
       agent any
       environment {
-          HEROKU_API_KEY = credentials("${HEROKU_GEDS}")
+          HEROKU_API_KEY = credentials('HEROKU_GEDS')
       }  
       steps {
           script {
