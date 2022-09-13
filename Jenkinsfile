@@ -35,7 +35,8 @@ pipeline {
               script {
                 sh '''
                   echo "Testing Image..."
-                  export *="${HTTP_PROXY}"
+                  export http_proxy="${HTTP_PROXY}"
+                  export https_proxy="${HTTPS_PROXY}"
                   curl http://docker-jenkins.web-connectivity.fr:80 | grep -q "Hello world!"
                 '''
               }
