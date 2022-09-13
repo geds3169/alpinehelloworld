@@ -35,7 +35,7 @@ pipeline {
               script {
                 sh '''
                   echo "Testing Image..."
-                  export http_proxy="${HTTP_PROXY}"
+                  export *="${HTTP_PROXY}"
                   curl http://docker-jenkins.web-connectivity.fr:80 | grep -q "Hello world!"
                 '''
               }
@@ -63,7 +63,7 @@ pipeline {
              script {
                sh '''
                     export http_proxy="${HTTP_PROXY}"
-                    export https_proxy="${HTTP_PROXY}"
+                    export https_proxy="${HTTPS_PROXY}"
                    echo $DOCKERHUB_PASSWORD_PSW | docker login -u $ID_DOCKER --password-stdin							 
                 docker push ${ID_DOCKER}/${IMAGE_NAME}:${IMAGE_TAG}                
                '''
